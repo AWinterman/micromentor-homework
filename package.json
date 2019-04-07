@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "tsc server.ts && node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ecstatic": "^4.0.0",
+    "joi": "^14.3.1",
+    "open": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/joi": "^14.3.2",
+    "@types/node": "^11.13.0",
+    "ts-node": "^5.0.0",
+    "typescript": "^2.7.2"
+  }
+}
