@@ -11,4 +11,4 @@ To complete it:
 4. npm start
 
 This will start a server and open a page on that server. The page will have
-additionally instructions for you to follow.
+additional instructions for you to follow.
