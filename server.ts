@@ -3,6 +3,7 @@ import * as joi from "joi"
 import * as ecstatic from "ecstatic"
 import * as fs from "fs"
 import * as open from "open"
+import * as url from "url";
 
 const jsonType = "application/json"
 const port = 8888
@@ -31,10 +32,10 @@ const staticFiles = ecstatic({
 })
 
 function requestListener(request: http.IncomingMessage, response: http.ServerResponse) {
-  if (request.url == "/api/profile" || request.url == "api/pofile/") {
-    response.writeHead(404, http.STATUS_CODES[404], headers)
-    response.end(JSON.stringify({ ok: false }))
-  } else {
+
+  let path = url.parse(request.url, true).pathname;
+
+  if (!(path == "/api/profile" || path == "/api/profile/")) {
     return staticFiles(request, response)
   }
 
@@ -103,6 +104,6 @@ function requestListener(request: http.IncomingMessage, response: http.ServerRes
 const server = http.createServer(requestListener)
 
  server.listen(port, () => {
-   console.log(`listining on port localhost:${port}`)
+   console.log(`listening on port localhost:${port}`)
    open(`http://localhost:${port}`)
 })
