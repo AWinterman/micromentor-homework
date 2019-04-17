@@ -51,6 +51,24 @@
             <input name="favorite_color" type="text">
             <button>submit</button>
         </form>
+
+	<h1>API:</h1>
+	<p>
+	The api expects <code> application/json </code> content type and accept headers.
+	It both consumes and expects objects that look as follows:
+	<pre>
+		{
+			"name":"andrew",
+		 	"birthday":"1999-01-01",
+			"country":"USA",
+			"email":"me@andrew.me",
+			"phone":"5555555555",
+			"favorite_color":"blue"
+			"role": "one of mentor or mentee",
+			"venture": "some venture"
+		}
+	</pre>
+	</p>
     </body>
 
 </html>
