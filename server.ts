@@ -10,7 +10,7 @@ const port = 8888
 const headers = { "Content-Type": jsonType }
 
 const storage = {
-  get: () => require("./.profile.json"),
+  get: () => JSON.parse(fs.readFileSync("./.profile.json").toString()),
   save: (data: any) => fs.writeFileSync("./.profile.json", JSON.stringify(data))
 }
 
